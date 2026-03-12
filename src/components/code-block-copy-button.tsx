@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 export interface CodeBlockCopyButtonProps {
   /** Raw code string to copy to clipboard (no line numbers or prompts). */
@@ -23,12 +23,24 @@ export function CodeBlockCopyButton({
   className = "",
 }: CodeBlockCopyButtonProps) {
   const [copied, setCopied] = useState(false);
+  const resetTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimerRef.current) {
+        clearTimeout(resetTimerRef.current);
+      }
+    };
+  }, []);
 
   const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(rawCode);
       setCopied(true);
-      setTimeout(() => setCopied(false), COPIED_DURATION_MS);
+      if (resetTimerRef.current) {
+        clearTimeout(resetTimerRef.current);
+      }
+      resetTimerRef.current = setTimeout(() => setCopied(false), COPIED_DURATION_MS);
     } catch {
       setCopied(false);
     }
@@ -47,7 +59,6 @@ export function CodeBlockCopyButton({
         className
       }
       aria-label={copied ? "Copied!" : "Copy code"}
-      aria-live="polite"
     >
       {copied ? (
         <span aria-hidden>✓</span>
@@ -57,6 +68,9 @@ export function CodeBlockCopyButton({
       {!iconOnly && (
         <span>{copied ? "Copied!" : "Copy"}</span>
       )}
+      <span className="sr-only" aria-live="polite">
+        {copied ? "Copied code to clipboard." : ""}
+      </span>
     </button>
   );
 }

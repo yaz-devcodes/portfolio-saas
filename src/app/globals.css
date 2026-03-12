@@ -1,81 +1,80 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-      /* Hero gradient */
-    --gradient-1: linear-gradient(
-      145deg,
-      hsl(340 100% 87%),
-      hsl(47 100% 87%) 40%,
-      hsl(47 100% 87%) 60%,
-      hsl(47 100% 53%)
-    );
-    /* Footer gradient */
-    --gradient-2: linear-gradient(
-      145deg,
-      hsl(293 100% 8%) 10%,
-      hsl(293 100% 9%) 40%,
-      hsl(293 100% 9%) 60%,
-      hsl(292 98% 22%)
-    );
-    /* Radius */  
-    --radius--x-large: 2rem;
-    --radius--medium: 0.875rem;
-    --radius--small-plus: 0.5rem;
-    /* Buttons */
-    --btn-primary-bg: rgba(223, 55, 167, 1);
-    --btn-primary-border: rgba(223, 55, 167, 1);
-    --btn-primary-text: rgba(255, 255, 255, 1);
-    --btn-primary-hover-bg: rgba(223, 55, 167, 0.9);
-    --btn-primary-hover-border: rgba(223, 55, 167, 0.9);
-    --btn-secondary-bg: rgba(246, 240, 185, 0.866);
-    --btn-secondary-border: rgba(36, 0, 41, 0.35);
-    --btn-secondary-text: rgba(36, 0, 41, 1);
-    --btn-secondary-hover-bg: rgb(255, 241, 189);
-    --btn-secondary-hover-border: rgba(36, 0, 41, 0.5);
-      /* Navbar */
-    --component-navbar--background-color: #ffffff33;
-    --component-navbar--background-color-open: #ffffffc9;
-    --radius--medium: 0.875rem;
-    --shadow-color: 293deg 100% 7%;
-    --shadow-md: 0 0 0 1px hsl(var(--shadow-color) / 0.11),
-      0 2px 2px 0 hsl(var(--shadow-color) / 0.05);
-    /* Product preview / card */
-    --colors-page-wrapper--background-tertiary: var(--colors-black--100);
-    --product-preview-body-bg: #f5f5f5;
-    --component-card--border-radius: var(--radius--medium);
-    --shadow-card-overlay: 0 0 0 1px hsl(var(--shadow-color) / 0.11),
-      0 1px 1px 0 hsl(var(--shadow-color) / 0.04),
-      0 4px 6px 0 hsl(var(--shadow-color) / 0.04),
-      0 8px 12px 0 hsl(var(--shadow-color) / 0.04);
-    /* Typography / colors */
-    --colors-page-wrapper--text: #240029;
-    --colors-black--100: #2900290d;
-    --colors-black--200: #2900291c;
-    --colors-black--600: #290029ad;
-    --colors-general--secondary: #df37a7;
-    --colors-white--1000: #ffffff;
+  --background: #ffffff;
+  --foreground: #171717;
+  /* Hero gradient */
+  --gradient-1: linear-gradient(
+    145deg,
+    hsl(340 100% 87%),
+    hsl(47 100% 87%) 40%,
+    hsl(47 100% 87%) 60%,
+    hsl(47 100% 53%)
+  );
+  /* Footer gradient */
+  --gradient-2: linear-gradient(
+    145deg,
+    hsl(293 100% 8%) 10%,
+    hsl(293 100% 9%) 40%,
+    hsl(293 100% 9%) 60%,
+    hsl(292 98% 22%)
+  );
+  /* Radius */
+  --radius--x-large: 2rem;
+  --radius--medium: 0.875rem;
+  --radius--small-plus: 0.5rem;
+  /* Buttons */
+  --btn-primary-bg: rgba(223, 55, 167, 1);
+  --btn-primary-border: rgba(223, 55, 167, 1);
+  --btn-primary-text: rgba(255, 255, 255, 1);
+  --btn-primary-hover-bg: rgba(223, 55, 167, 0.9);
+  --btn-primary-hover-border: rgba(223, 55, 167, 0.9);
+  --btn-secondary-bg: rgba(246, 240, 185, 0.866);
+  --btn-secondary-border: rgba(36, 0, 41, 0.35);
+  --btn-secondary-text: rgba(36, 0, 41, 1);
+  --btn-secondary-hover-bg: rgb(255, 241, 189);
+  --btn-secondary-hover-border: rgba(36, 0, 41, 0.5);
+  /* Navbar */
+  --component-navbar--background-color: #ffffff33;
+  --component-navbar--background-color-open: #ffffffc9;
+  --shadow-color: 293deg 100% 7%;
+  --shadow-md: 0 0 0 1px hsl(var(--shadow-color) / 0.11),
+    0 2px 2px 0 hsl(var(--shadow-color) / 0.05);
+  /* Product preview / card */
+  --colors-page-wrapper--background-tertiary: var(--colors-black--100);
+  --product-preview-body-bg: #f5f5f5;
+  --component-card--border-radius: var(--radius--medium);
+  --shadow-card-overlay: 0 0 0 1px hsl(var(--shadow-color) / 0.11),
+    0 1px 1px 0 hsl(var(--shadow-color) / 0.04),
+    0 4px 6px 0 hsl(var(--shadow-color) / 0.04),
+    0 8px 12px 0 hsl(var(--shadow-color) / 0.04);
+  /* Typography / colors */
+  --colors-page-wrapper--text: #240029;
+  --colors-black--100: #2900290d;
+  --colors-black--200: #2900291c;
+  --colors-black--600: #290029ad;
+  --colors-general--secondary: #df37a7;
+  --colors-white--1000: #ffffff;
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-sans: var(--font-primary), Arial, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-primary), Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
   }
-  
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: #0a0a0a;
-      --foreground: #ededed;
-    }
-  }
-  
-  body {
-    background: #ffffff;
-    color: var(--foreground);
-    font-family: var(--font-sans);
-  }
+}
+
+body {
+  background: #ffffff;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
 
   /* Marquee: horizontal infinite scroll with optional fade edges and pause on hover */
 .marquee-component {

@@ -1,0 +1,18 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="remoteBg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ede9fe"/>
+      <stop offset="1" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#remoteBg)"/>
+  <circle cx="600" cy="330" r="170" fill="#ffffff" stroke="#c7d2fe" stroke-width="4"/>
+  <circle cx="600" cy="330" r="110" fill="none" stroke="#818cf8" stroke-width="4"/>
+  <circle cx="600" cy="330" r="55" fill="#4f46e5"/>
+  <path d="M350 180L470 250M850 180L730 250M350 480L470 410M850 480L730 410" stroke="#6366f1" stroke-width="6" stroke-linecap="round"/>
+  <rect x="260" y="150" width="120" height="70" rx="14" fill="#ffffff" stroke="#c7d2fe"/>
+  <rect x="820" y="150" width="120" height="70" rx="14" fill="#ffffff" stroke="#c7d2fe"/>
+  <rect x="260" y="460" width="120" height="70" rx="14" fill="#ffffff" stroke="#c7d2fe"/>
+  <rect x="820" y="460" width="120" height="70" rx="14" fill="#ffffff" stroke="#c7d2fe"/>
+  <text x="445" y="590" fill="#312e81" font-size="30" font-family="Inter, Arial, sans-serif">Remote access enabled</text>
+</svg>

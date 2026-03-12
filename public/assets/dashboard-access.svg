@@ -1,0 +1,9 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f9fafb"/>
+  <rect x="120" y="100" width="960" height="475" rx="24" fill="#ffffff" stroke="#e5e7eb"/>
+  <rect x="170" y="150" width="220" height="370" rx="16" fill="#111827"/>
+  <rect x="430" y="150" width="600" height="140" rx="16" fill="#eff6ff" stroke="#bfdbfe"/>
+  <rect x="430" y="315" width="280" height="205" rx="16" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <rect x="750" y="315" width="280" height="205" rx="16" fill="#fef2f2" stroke="#fecaca"/>
+  <text x="455" y="232" fill="#1e3a8a" font-size="34" font-family="Inter, Arial, sans-serif">Dashboard</text>
+</svg>

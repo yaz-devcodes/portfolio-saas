@@ -1,20 +1,32 @@
 import Link from "next/link";
 
-export interface ProductPreviewProps {
+interface ProductPreviewBaseProps {
+  title: string;
+  category: string;
   imageSrc?: string;
   imageAlt?: string;
-  href?: string;
   logoSrc?: string;
   logoAlt?: string;
-  title?: string;
-  category?: string;
   builtOn?: string;
   className?: string;
   disabled?: boolean;
 }
 
+interface ProductPreviewLinkedProps extends ProductPreviewBaseProps {
+  href: string;
+}
+
+interface ProductPreviewStaticProps extends ProductPreviewBaseProps {
+  href?: undefined;
+}
+
+export type ProductPreviewProps =
+  | ProductPreviewLinkedProps
+  | ProductPreviewStaticProps;
+
 /**
- * Product preview card: image area with hover effects, optional logo/meta row, and link overlay.
+ * Product preview card used for starter capabilities and feature visibility.
+ * Keep the card shape stable and customize card content from `site-content.ts`.
  */
 export function ProductPreview({
   imageSrc,
@@ -28,7 +40,8 @@ export function ProductPreview({
   className = "",
   disabled = false,
 }: ProductPreviewProps) {
-  const isClickable = href && !disabled;
+  const resolvedHref = !disabled ? href : undefined;
+  const isClickable = typeof resolvedHref === "string";
 
   const cardContent = (
     <>
@@ -68,11 +81,9 @@ export function ProductPreview({
         className="product-preview__body relative flex flex-1 flex-col rounded-b-[var(--component-card--border-radius)] p-5"
         style={{ backgroundColor: "var(--product-preview-body-bg)" }}
       >
-        {title && (
-          <h3 className="mb-2 text-sm font-semibold tracking-tight text-black">
-            {title}
-          </h3>
-        )}
+        <h3 className="mb-2 text-sm font-semibold tracking-tight text-black">
+          {title}
+        </h3>
         {logoSrc && (
           <div className="mb-3 flex items-center justify-between gap-2">
             <img
@@ -84,18 +95,16 @@ export function ProductPreview({
             />
           </div>
         )}
-        {(category ?? builtOn) && (
-          <p className="text-xs font-mono tracking-wide text-black">
-            {[category, builtOn && `built on ${builtOn}`].filter(Boolean).join(" · ")}
-          </p>
-        )}
+        <p className="text-xs font-mono tracking-wide text-black">
+          {[category, builtOn && `built on ${builtOn}`].filter(Boolean).join(" · ")}
+        </p>
       </div>
 
       {isClickable && (
         <Link
-          href={href}
+          href={resolvedHref}
           className="absolute inset-0 z-10"
-          aria-label="View product"
+          aria-label={`View ${title}`}
         />
       )}
     </>

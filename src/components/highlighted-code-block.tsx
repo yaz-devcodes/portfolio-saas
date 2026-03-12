@@ -6,10 +6,6 @@ export interface HighlightedCodeBlockProps {
   code: string;
   /** Shiki language alias (e.g. "tsx", "bash", "json"). */
   lang: string;
-  /** @deprecated No longer displayed; kept for API compatibility. */
-  filePath?: string;
-  /** @deprecated No longer displayed; kept for API compatibility. */
-  title?: string;
 }
 
 const SHIKI_THEME = "one-dark-pro";

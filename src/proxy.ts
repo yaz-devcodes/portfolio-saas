@@ -1,20 +1,16 @@
 import { NextResponse } from "next/server";
 import { clerkMiddleware } from "@clerk/nextjs/server";
+import { canAccessAppHome } from "@/lib/auth-gates";
+import { ROUTES } from "@/lib/contracts";
 
 export default clerkMiddleware(async (auth, req) => {
   const url = req.nextUrl;
 
-  if (url.pathname.startsWith("/app")) {
+  if (url.pathname.startsWith(ROUTES.appHome)) {
     const { userId, has } = await auth();
-
-    if (!userId) {
-      return NextResponse.redirect(new URL("/pricing", url.origin));
-    }
-
-    const canAccessDashboard = has({ feature: "dashboard_access" });
-
-    if (!canAccessDashboard) {
-      return NextResponse.redirect(new URL("/pricing", url.origin));
+    const canAccess = canAccessAppHome({ userId, has });
+    if (!canAccess) {
+      return NextResponse.redirect(new URL(ROUTES.pricing, url.origin));
     }
   }
 

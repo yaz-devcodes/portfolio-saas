@@ -2,8 +2,7 @@
 
 import { Button } from "@/components/button";
 import { Marquee } from "@/components/marquee";
-
-const POWERED_BY_ITEMS = ["Clerk", "Stripe", "Postgres", "Prisma", "Next.js", "Tailwind CSS"] as const;
+import { HERO_CONTENT } from "@/lib/site-content";
 
 export default function Hero() {
   return (
@@ -15,26 +14,25 @@ export default function Hero() {
       }}
     >
       <h1 className="text-4xl font-bold leading-none tracking-[-0.03em] text-black">
-        Launch and scale
+        {HERO_CONTENT.titleLineOne}
       </h1>
       <h2 className="text-3xl font-bold leading-none tracking-[-0.03em] text-black">
-        your SaaS today!
+        {HERO_CONTENT.titleLineTwo}
       </h2>
       <p className="mt-4 max-w-2xl text-base leading-relaxed tracking-[-0.01em] text-black">
-        A scaffolded template with landing page, auth, signup, and payment.
-        Extend it into any SaaS product you want!
+        {HERO_CONTENT.description}
       </p>
       <div className="flex flex-row items-center justify-center gap-2 mt-6">
-        <Button href="/pricing" variant="primary" size="default">
-            Sign up for free
+        <Button href={HERO_CONTENT.primaryCta.href} variant="primary" size="default">
+          {HERO_CONTENT.primaryCta.label}
         </Button>
-        <Button href="/get-started" variant="secondary" size="default">
-            Get started now
+        <Button href={HERO_CONTENT.secondaryCta.href} variant="secondary" size="default">
+          {HERO_CONTENT.secondaryCta.label}
         </Button>
       </div>
       <div className="mt-10 w-full px-2 md:px-4">
         <Marquee
-          items={POWERED_BY_ITEMS}
+          items={HERO_CONTENT.poweredByItems}
           label="Pre-configured with:"
           duration="20s"
           pauseOnHover

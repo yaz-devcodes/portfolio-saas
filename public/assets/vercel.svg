@@ -1,0 +1,12 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vercelBg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#vercelBg)"/>
+  <polygon points="600,160 760,450 440,450" fill="#ffffff"/>
+  <rect x="320" y="500" width="560" height="64" rx="12" fill="#0b1220" stroke="#374151"/>
+  <text x="356" y="542" fill="#d1d5db" font-size="30" font-family="Inter, Arial, sans-serif">Deploy to production</text>
+</svg>

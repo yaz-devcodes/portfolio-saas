@@ -1,7 +1,7 @@
-/* Navbar with fixed position and animated dropdown menu. */
+/* Thin starter navbar with auth controls and a compact mobile-first menu. */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   SignInButton,
   SignUpButton,
@@ -12,6 +12,8 @@ import {
 import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { Button } from "./button";
+import { ROUTES } from "@/lib/contracts";
+import { NAV_LINKS } from "@/lib/site-content";
 
 /** Compact logo mark: stacked layers (template / starter). */
 function LogoMark() {
@@ -91,6 +93,27 @@ function MenuIcon({ open }: { open: boolean }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    if (!open) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
     <>
       {open && (
@@ -115,7 +138,7 @@ export default function Navbar() {
               {/* Top row */}
               <div className="flex items-center justify-between">
                 <Link
-                  href="/"
+                  href={ROUTES.home}
                   className="flex items-center gap-2 rounded-[var(--radius--small-plus)] px-1.5 py-1.5 -ml-1.5 text-black transition-colors hover:bg-black/5 focus:outline-none focus:ring-2 focus:ring-black/20 focus:ring-offset-1"
                   aria-label="SaaS Starter – Home"
                 >
@@ -140,7 +163,7 @@ export default function Navbar() {
                   </SignedOut>
                   <SignedIn>
                     <UserButton
-                      afterSignOutUrl="/"
+                      afterSignOutUrl={ROUTES.home}
                       appearance={{
                         elements: {
                           avatarBox:
@@ -158,6 +181,8 @@ export default function Navbar() {
                     onClick={() => setOpen((prev) => !prev)}
                     aria-label={open ? "Close menu" : "Open menu"}
                     aria-pressed={open}
+                    aria-expanded={open}
+                    aria-controls="site-navigation"
                     className="flex h-10 w-10 items-center justify-center rounded-[var(--radius--small-plus)] text-black hover:bg-black/5"
                   >
                     <MenuIcon open={open} />
@@ -172,28 +197,22 @@ export default function Navbar() {
                   open ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0",
                 ].join(" ")}
               >
-                <nav className="flex flex-col items-stretch px-1 pb-2 text-sm text-black">
-                  <div className="mx-auto my-1 h-px w-10/12 bg-black/10" />
-                  <a
-                    href="/app"
-                    className="flex w-full items-center justify-center rounded-[var(--radius--small-plus)] px-3 py-2 hover:bg-white/70 transition-colors"
-                  >
-                    Apps
-                  </a>
-                  <div className="mx-auto my-1 h-px w-10/12 bg-black/10" />
-                  <a
-                    href="/get-started"
-                    className="flex w-full items-center justify-center rounded-[var(--radius--small-plus)] px-3 py-2 hover:bg-white/70 transition-colors"
-                  >
-                    Get started
-                  </a>
-                  <div className="mx-auto my-1 h-px w-10/12 bg-black/10" />
-                  <a
-                    href="/pricing"
-                    className="flex w-full items-center justify-center rounded-[var(--radius--small-plus)] px-3 py-2 hover:bg-white/70 transition-colors"
-                  >
-                    Pricing
-                  </a>
+                <nav
+                  id="site-navigation"
+                  className="flex flex-col items-stretch px-1 pb-2 text-sm text-black"
+                >
+                  {NAV_LINKS.map(({ href, label }) => (
+                    <div key={href}>
+                      <div className="mx-auto my-1 h-px w-10/12 bg-black/10" />
+                      <Link
+                        href={href}
+                        className="flex w-full items-center justify-center rounded-[var(--radius--small-plus)] px-3 py-2 transition-colors hover:bg-white/70"
+                        onClick={() => setOpen(false)}
+                      >
+                        {label}
+                      </Link>
+                    </div>
+                  ))}
                 </nav>
               </div>
             </div>

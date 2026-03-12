@@ -1,0 +1,9 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="130" y="120" width="940" height="435" rx="24" fill="#111827" stroke="#334155"/>
+  <text x="190" y="220" fill="#a5b4fc" font-size="36" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">GET /api/projects</text>
+  <text x="190" y="280" fill="#34d399" font-size="28" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">200 OK</text>
+  <text x="190" y="340" fill="#e2e8f0" font-size="26" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">{ id: 1, name: "Starter" }</text>
+  <rect x="190" y="390" width="250" height="56" rx="12" fill="#6366f1"/>
+  <text x="222" y="426" fill="#ffffff" font-size="24" font-family="Inter, Arial, sans-serif">Generate key</text>
+</svg>

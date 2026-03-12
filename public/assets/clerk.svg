@@ -1,0 +1,16 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="clerkBg" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fdf2f8"/>
+      <stop offset="1" stop-color="#fee2e2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#clerkBg)"/>
+  <rect x="180" y="120" width="840" height="435" rx="24" fill="#ffffff" stroke="#fbcfe8" stroke-width="2"/>
+  <rect x="250" y="190" width="300" height="36" rx="8" fill="#f3f4f6"/>
+  <rect x="250" y="252" width="700" height="60" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+  <rect x="250" y="334" width="700" height="60" rx="12" fill="#f9fafb" stroke="#e5e7eb"/>
+  <rect x="250" y="430" width="220" height="56" rx="12" fill="#db2777"/>
+  <text x="275" y="468" fill="#ffffff" font-size="26" font-family="Inter, Arial, sans-serif">Save keys</text>
+  <text x="250" y="165" fill="#be185d" font-size="34" font-family="Inter, Arial, sans-serif">Configure Clerk</text>
+</svg>

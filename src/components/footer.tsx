@@ -1,14 +1,6 @@
 import Link from "next/link";
+import { FOOTER_LINKS, SOCIAL_LINKS } from "@/lib/site-content";
 
-const FOOTER_LINKS = [
-  { label: "Privacy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
-  { label: "Contact", href: "/contact" },
-] as const;
-
-const GITHUB_HREF = "https://github.com/yaz-devcodes/portfolio-saas";
-const LINKEDIN_HREF = "https://linkedin.com";
-const X_HREF = "https://x.com";
 const PRODUCT_NAME = "SaaS Starter";
 
 const SOCIAL_LINK_CLASS =
@@ -72,6 +64,7 @@ function XIcon({ className = "h-6 w-6" }: { className?: string }) {
  */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [githubLink, linkedInLink, xLink] = SOCIAL_LINKS;
 
   return (
     <footer className="w-full" style={{ background: "transparent" }} aria-label="Site footer">
@@ -103,34 +96,34 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center justify-center gap-6">
             <a
-              href={GITHUB_HREF}
+              href={githubLink.href}
               target="_blank"
               rel="noopener noreferrer"
               className={SOCIAL_LINK_CLASS}
-              aria-label="GitHub (opens in new tab)"
+              aria-label={`${githubLink.label} (opens in new tab)`}
             >
               <GitHubIcon />
-              <span className="text-sm">GitHub</span>
+              <span className="text-sm">{githubLink.label}</span>
             </a>
             <a
-              href={LINKEDIN_HREF}
+              href={linkedInLink.href}
               target="_blank"
               rel="noopener noreferrer"
               className={SOCIAL_LINK_CLASS}
-              aria-label="LinkedIn (opens in new tab)"
+              aria-label={`${linkedInLink.label} (opens in new tab)`}
             >
               <LinkedInIcon />
-              <span className="text-sm">LinkedIn</span>
+              <span className="text-sm">{linkedInLink.label}</span>
             </a>
             <a
-              href={X_HREF}
+              href={xLink.href}
               target="_blank"
               rel="noopener noreferrer"
               className={SOCIAL_LINK_CLASS}
-              aria-label="X (opens in new tab)"
+              aria-label={`${xLink.label} (opens in new tab)`}
             >
               <XIcon />
-              <span className="text-sm">X</span>
+              <span className="text-sm">{xLink.label}</span>
             </a>
           </div>
 
