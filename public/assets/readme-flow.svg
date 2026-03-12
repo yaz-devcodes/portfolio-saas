@@ -1,0 +1,18 @@
+<svg width="1280" height="420" viewBox="0 0 1280 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="420" fill="#f8fafc"/>
+  <text x="80" y="80" fill="#0f172a" font-size="36" font-family="Inter, Arial, sans-serif">Clone -> Configure -> Deploy</text>
+  <rect x="80" y="130" width="330" height="210" rx="20" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="120" y="185" fill="#0f172a" font-size="30" font-family="Inter, Arial, sans-serif">1. Clone</text>
+  <text x="120" y="235" fill="#334155" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">git clone ...</text>
+  <text x="120" y="270" fill="#334155" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">npm install</text>
+  <rect x="475" y="130" width="330" height="210" rx="20" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="515" y="185" fill="#0f172a" font-size="30" font-family="Inter, Arial, sans-serif">2. Configure</text>
+  <text x="515" y="235" fill="#334155" font-size="22" font-family="Inter, Arial, sans-serif">Clerk keys + plans</text>
+  <text x="515" y="270" fill="#334155" font-size="22" font-family="Inter, Arial, sans-serif">Contracts + content</text>
+  <rect x="870" y="130" width="330" height="210" rx="20" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="910" y="185" fill="#0f172a" font-size="30" font-family="Inter, Arial, sans-serif">3. Deploy</text>
+  <text x="910" y="235" fill="#334155" font-size="22" font-family="Inter, Arial, sans-serif">Build + env vars</text>
+  <text x="910" y="270" fill="#334155" font-size="22" font-family="Inter, Arial, sans-serif">Push to production</text>
+  <path d="M418 235H460" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M813 235H855" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+</svg>

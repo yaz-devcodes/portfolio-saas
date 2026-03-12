@@ -1,0 +1,17 @@
+<svg width="1280" height="520" viewBox="0 0 1280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="520" fill="#111827"/>
+  <text x="70" y="80" fill="#f8fafc" font-size="34" font-family="Inter, Arial, sans-serif">Primary customization surfaces</text>
+  <rect x="70" y="120" width="1140" height="330" rx="20" fill="#0b1220" stroke="#334155"/>
+  <rect x="110" y="165" width="250" height="230" rx="16" fill="#1f2937"/>
+  <text x="130" y="210" fill="#f8fafc" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">contracts.ts</text>
+  <text x="130" y="250" fill="#93c5fd" font-size="18" font-family="Inter, Arial, sans-serif">Routes + feature keys</text>
+  <rect x="390" y="165" width="250" height="230" rx="16" fill="#1f2937"/>
+  <text x="410" y="210" fill="#f8fafc" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">site-content.ts</text>
+  <text x="410" y="250" fill="#93c5fd" font-size="18" font-family="Inter, Arial, sans-serif">Copy + links + cards</text>
+  <rect x="670" y="165" width="250" height="230" rx="16" fill="#1f2937"/>
+  <text x="690" y="210" fill="#f8fafc" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">auth-gates.ts</text>
+  <text x="690" y="250" fill="#93c5fd" font-size="18" font-family="Inter, Arial, sans-serif">Access policy helpers</text>
+  <rect x="950" y="165" width="220" height="230" rx="16" fill="#1f2937"/>
+  <text x="970" y="210" fill="#f8fafc" font-size="22" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace">pricing/page.tsx</text>
+  <text x="970" y="250" fill="#93c5fd" font-size="18" font-family="Inter, Arial, sans-serif">Billing behavior</text>
+</svg>
